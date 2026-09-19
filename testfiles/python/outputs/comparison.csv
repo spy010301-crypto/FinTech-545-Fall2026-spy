@@ -1,0 +1,26 @@
+test,status,output,comparison,max_absolute_difference,max_error_over_tolerance
+1.1,PASS,testout_1.1.csv,numeric tolerance,2.220446049250313e-16,2.7226317310005245e-10
+1.2,PASS,testout_1.2.csv,numeric tolerance,2.220446049250313e-16,1.0495785779128127e-09
+1.3,PASS,testout_1.3.csv,numeric tolerance,2.220446049250313e-16,4.940537579974657e-10
+1.4,PASS,testout_1.4.csv,numeric tolerance,2.220446049250313e-16,4.5021271380184717e-10
+2.1,PASS,testout_2.1.csv,numeric tolerance,4.440892098500626e-16,1.4004940504331447e-09
+2.2,PASS,testout_2.2.csv,numeric tolerance,3.3306690738754696e-16,7.846913926307472e-10
+2.3,PASS,testout_2.3.csv,numeric tolerance,5.551115123125783e-16,8.093764567773633e-10
+3.1,PASS,testout_3.1.csv,numeric tolerance,8.326672684688674e-16,1.6135792784406868e-08
+3.2,PASS,testout_3.2.csv,numeric tolerance,1.1657341758564144e-15,3.722185499956814e-08
+3.3,PASS,testout_3.3.csv,numeric tolerance,1.1934897514720433e-15,4.512389492035506e-08
+3.4,PASS,testout_3.4.csv,numeric tolerance,1.887379141862766e-15,5.590095439495689e-08
+4.1,PASS,testout_4.1.csv,numeric tolerance,2.220446049250313e-16,8.649418348047408e-10
+5.1,PASS,testout_5.1.csv,Monte Carlo: 5 standard errors,0.0008785029715465131,0.33845811504578216
+5.2,PASS,testout_5.2.csv,Monte Carlo: 5 standard errors,0.0016590691892222897,0.40953537565531717
+5.3,PASS,testout_5.3.csv,Monte Carlo: 5 standard errors,0.0008785029715464854,0.3269107467961752
+5.4,PASS,testout_5.4.csv,Monte Carlo: 5 standard errors,0.0008785029715465131,0.32691074679618554
+5.5,PASS,testout_5.5.csv,Monte Carlo: 5 standard errors,0.000939395871210176,0.7044630466532016
+6.1,PASS,testout6_1.csv,numeric tolerance,0.0,0.0
+6.2,PASS,testout6_2.csv,numeric tolerance,1.3877787807814457e-17,1.8946786372707936e-10
+7.1,PASS,testout7_1.csv,numeric tolerance,0.0,0.0
+7.2,PASS,testout7_2.csv,numeric tolerance,3.5066969772401535e-08,0.011248389727869611
+7.3,PASS,testout7_3.csv,numeric tolerance,8.87450601894102e-08,0.025939364033599536
+7.4,PASS,testout7_4.csv,numeric tolerance,0.0,0.0
+7.5,PASS,testout7_5.csv,numeric tolerance,8.526512829121202e-14,4.78318848606028e-09
+7.6,PASS,testout7_6.csv,numeric tolerance,0.0,0.0
