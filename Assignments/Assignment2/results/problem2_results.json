@@ -1,0 +1,51 @@
+{
+  "removed_mean": 0.00016187615348274152,
+  "moments": {
+    "mean": -2.220446049250313e-19,
+    "variance": 0.00014189813094424568,
+    "skewness": -0.1555865006522851,
+    "excess_kurtosis": 2.132366887286768
+  },
+  "recent_days": 40,
+  "earlier_standard_deviation": 0.010177831528364673,
+  "recent_standard_deviation": 0.024289077585391863,
+  "EW": {
+    "0.97": {
+      "volatility": 0.020709285722475435,
+      "effective_sample_size": 65.66663473349944,
+      "half_life_days": 22.75657306277341,
+      "recent_weight_share": 0.7042878838456508,
+      "volatility_standard_error": 0.0018070815093464948,
+      "VaR_standard_error": 2972.3845748455237
+    },
+    "0.94": {
+      "volatility": 0.0220736676763431,
+      "effective_sample_size": 32.33333333333093,
+      "half_life_days": 11.202305583621158,
+      "recent_weight_share": 0.9158383688566079,
+      "volatility_standard_error": 0.002744948888842146,
+      "VaR_standard_error": 4515.039135608419
+    }
+  },
+  "t_parameters": {
+    "nu": 8.269917622647348,
+    "mu": 0.00018163890710769454,
+    "sigma_scale": 0.010289989832938417
+  },
+  "VaR_dollars": {
+    "normal_equal": 19593.661202658834,
+    "normal_EW_0.97": 34063.74373218807,
+    "normal_EW_0.94": 36307.95233755444,
+    "t_MLE": 18872.441331033813,
+    "historical": 20574.462894980672
+  },
+  "ranking_smallest_first": [
+    "t_MLE",
+    "normal_equal",
+    "historical",
+    "normal_EW_0.97",
+    "normal_EW_0.94"
+  ],
+  "EW_VaR_gap": 2244.208605366366,
+  "zero_mean_normal_mixture_excess_kurtosis": 2.5722745436757863
+}
