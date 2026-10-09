@@ -4,12 +4,15 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-from helpers import FOLDER, historical_risk, moments, save_results
+from helpers import FOLDER, save_results
+from risk_library import (
+    arithmetic_returns, exponential_weights, ew_volatility, historical_risk, moments,
+)
 
 
 def main():
     prices = pd.read_csv(FOLDER / "problem2.csv")
-    raw_returns = prices.Price.pct_change().dropna().to_numpy()
+    raw_returns = arithmetic_returns(prices.Price).to_numpy()
     returns = raw_returns - raw_returns.mean()
     position = 1_000_000
     recent_days = 40  # Visual estimate recorded in Predictions.md, not fitted to VaR.
@@ -23,10 +26,8 @@ def main():
     results["EW"] = {}
     for decay in [0.97, 0.94]:
         # Newest return has exponent 0. Normalize the finite, 500-day weights.
-        weights = decay ** np.arange(len(returns) - 1, -1, -1)
-        weights = weights / weights.sum()
-        weighted_mean = weights @ returns
-        volatility = np.sqrt(weights @ (returns - weighted_mean) ** 2)
+        weights = exponential_weights(len(returns), decay)
+        volatility = ew_volatility(returns, weights)
         effective_sample_size = 1 / (weights @ weights)
         volatility_se = volatility / np.sqrt(2 * effective_sample_size)
         var[f"normal_EW_{decay}"] = float(-stats.norm.ppf(0.05) * volatility * position)

@@ -1,10 +1,9 @@
 """Problem 3: historical and normal risk of concentrated/diversified bonds."""
 
-import numpy as np
 import pandas as pd
-from scipy import stats
 
-from helpers import FOLDER, historical_risk, moments, save_results
+from helpers import FOLDER, save_results
+from risk_library import historical_risk, moments, normal_var
 
 
 def main():
@@ -24,7 +23,7 @@ def main():
         results["positions"][name] = {
             "historical_5_percent": historical_risk(pnl, 0.05),
             "historical_1_percent": historical_risk(pnl, 0.01),
-            "normal_VaR_5_percent": float(-stats.norm.ppf(0.05, loc=pnl.mean(), scale=pnl.std(ddof=1))),
+            "normal_VaR_5_percent": normal_var(pnl, 0.05),
         }
     save_results(3, results)
 

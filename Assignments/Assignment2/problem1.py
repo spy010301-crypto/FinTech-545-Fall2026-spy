@@ -3,7 +3,8 @@
 import numpy as np
 import pandas as pd
 
-from helpers import FOLDER, higham, near_psd, save_results
+from helpers import FOLDER, save_results
+from risk_library import correlation_to_covariance, higham, near_psd, portfolio_variance
 
 
 def main():
@@ -14,10 +15,6 @@ def main():
     pairwise = returns.corr().to_numpy()
     standard_deviations = returns.std().to_numpy()  # Each asset's full available history.
     tracking_weights = np.array([-0.4, -0.3, -0.2, -0.1, 1.0])
-
-    def tracking_variance(correlation):
-        covariance = correlation * np.outer(standard_deviations, standard_deviations)
-        return float(tracking_weights @ covariance @ tracking_weights)
 
     results = {"asset_order": list(returns.columns),
                "joint_observations": counts.to_numpy().tolist(),
@@ -32,14 +29,16 @@ def main():
         results[name] = {"correlation": correlation.tolist(),
                          "eigenvalues": np.linalg.eigvalsh(correlation).tolist(),
                          "cholesky": cholesky}
-    results["pairwise_tracking_variance"] = tracking_variance(pairwise)
+    covariance = correlation_to_covariance(pairwise, standard_deviations)
+    results["pairwise_tracking_variance"] = portfolio_variance(covariance, tracking_weights)
 
     for name, repaired in [("Rebonato_Jackel", near_psd(pairwise)),
                            ("Higham", higham(pairwise))]:
+        covariance = correlation_to_covariance(repaired, standard_deviations)
         results[name] = {"correlation": repaired.tolist(),
                          "minimum_eigenvalue": float(np.linalg.eigvalsh(repaired).min()),
                          "frobenius_distance": float(np.linalg.norm(repaired - pairwise, "fro")),
-                         "tracking_variance": tracking_variance(repaired)}
+                         "tracking_variance": portfolio_variance(covariance, tracking_weights)}
 
     changes = []
     higham_matrix = np.array(results["Higham"]["correlation"])
