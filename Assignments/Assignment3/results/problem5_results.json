@@ -1,0 +1,264 @@
+{
+  "n_fund_rows": 1257,
+  "n_aligned_rows": 1257,
+  "fund_sample_dates": [
+    "1996-10-01",
+    "2001-09-28"
+  ],
+  "recent_factor_window": {
+    "exclusive_start": "2014-09-30",
+    "inclusive_end": "2024-09-30",
+    "first_observation": "2014-10-01",
+    "n": 2516
+  },
+  "factor_columns": [
+    "Mkt-RF",
+    "SMB",
+    "HML",
+    "Mom"
+  ],
+  "days_per_year": 255,
+  "conventions": "All returns are decimals. OLS uses excess fund returns, an intercept, conventional homoskedastic SEs. AICc k includes error variance. Annual expected/realized comparison uses 255*daily arithmetic mean; CAGR is separate. Recent factor premia postdate the fund sample and are not a backtest.",
+  "sample_factor_means_daily": {
+    "Mkt-RF": 0.00021607000795544943,
+    "SMB": -0.00016276849642004774,
+    "HML": 0.00037167859984089095,
+    "Mom": 0.0007818615751789977,
+    "RF": 0.00019596658711217187
+  },
+  "recent_factor_means_daily": {
+    "Mkt-RF": 0.0004899841017488076,
+    "SMB": -4.6621621621621615e-05,
+    "HML": -9.383942766295704e-05,
+    "Mom": 9.658187599364072e-05,
+    "RF": 6.168918918918919e-05
+  },
+  "worst_momentum_entire_file": {
+    "date": "1939-09-05",
+    "return": -0.1844
+  },
+  "funds": {
+    "FUND1": {
+      "daily_mean_excess": 0.0006236470167064439,
+      "daily_total_volatility": 0.011745370075744407,
+      "daily_excess_volatility": 0.01174598835618051,
+      "annualized_excess_mean": 0.1590299892601432,
+      "annualized_total_volatility": 0.18755851925500214,
+      "sharpe_annual": 0.8478506811503062,
+      "capm_residual_correlations": {
+        "SMB": -0.06117325285499549,
+        "HML": 0.20520338301932223,
+        "Mom": 0.801464452406162
+      },
+      "prediction_before_multifactor_fit": "Momentum should remove much of the apparent FUND1 alpha; FUND2 alpha should move less because its CAPM momentum residual correlation is small.",
+      "models": {
+        "CAPM": {
+          "n": 1257,
+          "coefficients": {
+            "alpha": 0.00044065955499454423,
+            "Mkt-RF": 0.8468896884089022
+          },
+          "standard_errors": {
+            "alpha": 0.00013751999791635885,
+            "Mkt-RF": 0.01090000798741128
+          },
+          "t_statistics": {
+            "alpha": 3.2043307276848427,
+            "Mkt-RF": 77.69624475385693
+          },
+          "r_squared": 0.8278866533090184,
+          "log_likelihood": 4909.218432680687,
+          "aicc_parameter_count": 3,
+          "aicc": -9812.417711331047
+        },
+        "FF3": {
+          "n": 1257,
+          "coefficients": {
+            "alpha": 0.0002963092808383307,
+            "Mkt-RF": 1.0017271235159695,
+            "SMB": 0.08278215407505757,
+            "HML": 0.3346140324554758
+          },
+          "standard_errors": {
+            "alpha": 0.00013108983387488367,
+            "Mkt-RF": 0.017162023323285334,
+            "SMB": 0.020499809612549616,
+            "HML": 0.028812090715027584
+          },
+          "t_statistics": {
+            "alpha": 2.260352859407372,
+            "Mkt-RF": 58.368824272417335,
+            "SMB": 4.038191360781215,
+            "HML": 11.613667184552853
+          },
+          "r_squared": 0.8452057588803478,
+          "log_likelihood": 4975.874939014227,
+          "aicc_parameter_count": 5,
+          "aicc": -9941.701916397758
+        },
+        "Carhart4": {
+          "n": 1257,
+          "coefficients": {
+            "alpha": 2.9379997023071384e-06,
+            "Mkt-RF": 0.949159742754681,
+            "SMB": 0.0008347155810969158,
+            "HML": 0.2907278717197481,
+            "Mom": 0.39355125089873205
+          },
+          "standard_errors": {
+            "alpha": 6.984730428153813e-05,
+            "Mkt-RF": 0.00916635233596156,
+            "SMB": 0.010988754364101166,
+            "HML": 0.015328832799989818,
+            "Mom": 0.006972182794682441
+          },
+          "t_statistics": {
+            "alpha": 0.042063179567600056,
+            "Mkt-RF": 103.548249943538,
+            "SMB": 0.07596089178440672,
+            "HML": 18.966080164951713,
+            "Mom": 56.44591693707264
+          },
+          "r_squared": 0.9563325350972732,
+          "log_likelihood": 5771.237568450762,
+          "aicc_parameter_count": 6,
+          "aicc": -11530.407936901525
+        }
+      },
+      "expected_annual_without_alpha": 0.1370501677890879,
+      "expected_annual_with_alpha": 0.13779935771317622,
+      "realized_annual_arithmetic": 0.20900146897374702,
+      "realized_annual_geometric": 0.21084632436945636,
+      "momentum_stress": {
+        "return": -0.07257085066572619,
+        "loss_on_10million": 725708.5066572619,
+        "loss_daily_sd_multiple": 6.178677231770982
+      },
+      "sample_factor_return_contributions_daily": {
+        "Mkt-RF": 0.00020508495316799626,
+        "SMB": -1.358654000735314e-07,
+        "HML": 0.00010805732829551814,
+        "Mom": 0.00030770260094134755
+      },
+      "capm_alpha_minus_carhart_alpha": 0.00043772155529223707,
+      "alpha_difference_bridge_daily": {
+        "market_beta_change_times_market_mean": 2.209749145609666e-05,
+        "SMB": -1.358654000735314e-07,
+        "HML": 0.00010805732829551814,
+        "Mom": 0.00030770260094134755
+      },
+      "alpha_bridge_sum": 0.0004377215552928888
+    },
+    "FUND2": {
+      "daily_mean_excess": 0.00033755139220365953,
+      "daily_total_volatility": 0.007186030477873586,
+      "daily_excess_volatility": 0.007186627473299567,
+      "annualized_excess_mean": 0.08607560501193318,
+      "annualized_total_volatility": 0.11475170446392793,
+      "sharpe_annual": 0.750040751779431,
+      "capm_residual_correlations": {
+        "SMB": 0.32952616957917524,
+        "HML": -0.12063340171044434,
+        "Mom": 0.05302066302299169
+      },
+      "prediction_before_multifactor_fit": "Momentum should remove much of the apparent FUND1 alpha; FUND2 alpha should move less because its CAPM momentum residual correlation is small.",
+      "models": {
+        "CAPM": {
+          "n": 1257,
+          "coefficients": {
+            "alpha": 0.0002449069523269171,
+            "Mkt-RF": 0.42877047468727963
+          },
+          "standard_errors": {
+            "alpha": 0.00013347355125341192,
+            "Mkt-RF": 0.01057928153587671
+          },
+          "t_statistics": {
+            "alpha": 1.8348725273813877,
+            "Mkt-RF": 40.5292621463209
+          },
+          "r_squared": 0.5668860900146975,
+          "log_likelihood": 4946.760001798655,
+          "aicc_parameter_count": 3,
+          "aicc": -9887.500849566983
+        },
+        "FF3": {
+          "n": 1257,
+          "coefficients": {
+            "alpha": 0.00027714639011508757,
+            "Mkt-RF": 0.4443028098333001,
+            "SMB": 0.21001044046131975,
+            "HML": -0.0038001271552408405
+          },
+          "standard_errors": {
+            "alpha": 0.00012651816263808794,
+            "Mkt-RF": 0.016563509113044102,
+            "SMB": 0.01978489231350926,
+            "HML": 0.027807288111344697
+          },
+          "t_statistics": {
+            "alpha": 2.190566036813859,
+            "Mkt-RF": 26.824195694341277,
+            "SMB": 10.614687061901428,
+            "HML": -0.1366593944732957
+          },
+          "r_squared": 0.6148309423524779,
+          "log_likelihood": 5020.494626433889,
+          "aicc_parameter_count": 5,
+          "aicc": -10030.941291237083
+        },
+        "Carhart4": {
+          "n": 1257,
+          "coefficients": {
+            "alpha": 0.00027279724442342244,
+            "Mkt-RF": 0.4435235133844956,
+            "SMB": 0.20879559302395262,
+            "HML": -0.004450726989543733,
+            "Mom": 0.005834285212738643
+          },
+          "standard_errors": {
+            "alpha": 0.00012690979372869394,
+            "Mkt-RF": 0.01665490023082958,
+            "SMB": 0.01996613275241284,
+            "HML": 0.027851883888130858,
+            "Mom": 0.012668180818336544
+          },
+          "t_statistics": {
+            "alpha": 2.149536583493349,
+            "Mkt-RF": 26.63021136346991,
+            "SMB": 10.45748796790507,
+            "HML": -0.159799854380422,
+            "Mom": 0.4605464112332383
+          },
+          "r_squared": 0.6148961833058633,
+          "log_likelihood": 5020.601092442667,
+          "aicc_parameter_count": 6,
+          "aicc": -10029.134984885335
+        }
+      },
+      "expected_annual_without_alpha": 0.06891512961361046,
+      "expected_annual_with_alpha": 0.13847842694158316,
+      "realized_annual_arithmetic": 0.13604708472553698,
+      "realized_annual_geometric": 0.13817566525502786,
+      "momentum_stress": {
+        "return": -0.001075842193229006,
+        "loss_on_10million": 10758.421932290059,
+        "loss_daily_sd_multiple": 0.1497130017109749
+      },
+      "sample_factor_return_contributions_daily": {
+        "Mkt-RF": 9.583212906541684e-05,
+        "SMB": -3.3985344735640974e-05,
+        "HML": -1.6542399757476783e-06,
+        "Mom": 4.561603426475369e-06
+      },
+      "capm_alpha_minus_carhart_alpha": -2.7890292096505328e-05,
+      "alpha_difference_bridge_daily": {
+        "market_beta_change_times_market_mean": 3.187689188674503e-06,
+        "SMB": -3.3985344735640974e-05,
+        "HML": -1.6542399757476783e-06,
+        "Mom": 4.561603426475369e-06
+      },
+      "alpha_bridge_sum": -2.789029209623878e-05
+    }
+  }
+}
